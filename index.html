@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Conectar Puntos</title>
+    <link href="./dist/output.css" rel="stylesheet">
+    <style>
+        .grid-container {
+            display: grid;
+            gap: 2px;
+            background-color: #e5e7eb;
+            padding: 2px;
+            border-radius: 8px;
+        }
+        
+        .grid-cell {
+            background-color: white;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s;
+        }
+
+        .grid-cell.painted {
+            background-color: #dbeafe !important;
+        }
+
+        .point {
+            width: 48px;
+            height: 48px;
+            background-color: #3B82F6;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            z-index: 2;
+        }
+
+        .point.completed {
+            background-color: #10B981;
+        }
+
+        .line {
+            position: absolute;
+            background-color: #3B82F6;
+            height: 4px;
+            transform-origin: 0 0;
+            pointer-events: none;
+        }
+
+        .line.completed {
+            background-color: #10B981;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center mb-8 text-blue-600">Conecta los Puntos</h1>
+        
+        <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
+            <div class="mb-4">
+                <div class="flex justify-between items-center">
+                    <span class="text-lg font-semibold">Nivel: <span id="level">1</span></span>
+                    <span class="text-lg font-semibold">Puntos: <span id="score">0</span></span>
+                </div>
+            </div>
+            
+            <div id="game-container" class="grid-container grid-cols-5 w-full max-w-[500px] mx-auto">
+                <!-- Las celdas se generarán con JavaScript -->
+            </div>
+
+            <div class="mt-4 text-center">
+                <button id="resetButton" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                    Reiniciar Nivel
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html> 

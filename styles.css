@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+
+#game-container {
+    aspect-ratio: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#gameCanvas {
+    touch-action: none;
+    cursor: crosshair;
+}
+
+.point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #3B82F6;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.point.completed {
+    background-color: #10B981;
+}
+
+.point.current {
+    background-color: #F59E0B;
+}
+
+.line {
+    position: absolute;
+    background-color: #3B82F6;
+    transform-origin: 0 0;
+    pointer-events: none;
+} 

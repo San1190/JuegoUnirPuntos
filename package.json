@@ -1,0 +1,11 @@
+{
+  "name": "juego-conectar-puntos",
+  "version": "1.0.0",
+  "description": "Juego de conectar puntos",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
